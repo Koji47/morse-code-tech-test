@@ -1,5 +1,4 @@
-import "./style.css";
-import { morseCodeDict } from "./_morseCodeDict";
+import { englishToMorse } from "./_morseToEnglish";
 
 export const input = document.querySelector<HTMLInputElement>("input");
 export const translateButton =
@@ -13,23 +12,6 @@ if (!input || !translateButton) {
 if (!output) {
   throw new Error("Error output selector");
 }
-
-const englishToMorse = (input: string): string => {
-  const upperCaseText = input.toUpperCase();
-
-  const morseCodeArray = upperCaseText.split(" ").map((word) => {
-    const wordMorse = word.split("").map((char) => {
-      const morseChar = morseCodeDict[char];
-
-      return morseChar;
-    });
-    console.log(wordMorse);
-    return wordMorse.join(" ");
-  });
-
-  console.log(morseCodeArray.join(" / "));
-  return morseCodeArray.join(" / ");
-};
 
 translateButton.addEventListener("click", () => {
   const inputText = input.value;

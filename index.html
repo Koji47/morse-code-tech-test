@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morse Code Translator</title>
+    <link rel="stylesheet" href="./src/main.scss" />
   </head>
   <body>
-    <div id="app"></div>
-    <input type="text" />
-    <button id="translateButton"></button>
-    <div><p id="output"></p></div>
+    <main>
+      <div class="app">
+        <input class="app__input" type="text" />
+        <button class="app__translateButton">Morse to English</button>
+      </div>
+    </main>
+    <p id="output"></p>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

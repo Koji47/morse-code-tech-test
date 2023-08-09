@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/jest": "^29.5.3",
     "cypress": "^12.17.3",
+    "sass": "^1.64.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }
