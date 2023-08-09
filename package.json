@@ -1,4 +1,6 @@
 {
+  "homepage": "https://Koji47.github.io/morse-code-tech-test",
+  "author": "Chu Lam",
   "name": "morse-code-tech-test",
   "private": true,
   "version": "0.0.0",
@@ -7,11 +9,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test:cypress": "cypress open"
+    "test:cypress": "cypress open",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@types/jest": "^29.5.3",
     "cypress": "^12.17.3",
+    "gh-pages": "^5.0.0",
     "sass": "^1.64.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"

@@ -1,8 +1,7 @@
 import { englishToMorse } from "./_morseToEnglish";
 
 export const input = document.querySelector<HTMLInputElement>("input");
-export const translateButton =
-  document.querySelector<HTMLButtonElement>("button");
+export const translateButton = document.querySelector<HTMLButtonElement>("button");
 export const output = document.querySelector<HTMLDivElement>("#output");
 
 if (!input || !translateButton) {
