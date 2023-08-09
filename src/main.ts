@@ -14,21 +14,25 @@ if (!output) {
   throw new Error("Error output selector");
 }
 
-const englishToMorse = (input: string) => {
+const englishToMorse = (input: string): string => {
   const upperCaseText = input.toUpperCase();
-  let morseCode = "";
 
-  upperCaseText.split("").forEach((letter) => {
-    const morseChar = morseCodeDict[letter];
-    morseCode += morseChar + " ";
+  const morseCodeArray = upperCaseText.split(" ").map((word) => {
+    const wordMorse = word.split("").map((char) => {
+      const morseChar = morseCodeDict[char];
+
+      return morseChar;
+    });
+    console.log(wordMorse);
+    return wordMorse.join(" ");
   });
 
-  return morseCode;
+  console.log(morseCodeArray.join(" / "));
+  return morseCodeArray.join(" / ");
 };
 
 translateButton.addEventListener("click", () => {
   const inputText = input.value;
   const morseCodeOutput = englishToMorse(inputText);
   output.textContent = morseCodeOutput;
-  console.log("working button");
 });
