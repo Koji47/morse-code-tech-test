@@ -4,7 +4,7 @@ describe("Morse Code Translator", () => {
   beforeEach(() => {
     cy.visit("https://koji47.github.io/morse-code-tech-test/");
   });
-  
+
   it("Translates English to Morse code", () => {
     cy.get("input").type("Hello World");
     cy.get("button").click();
@@ -22,6 +22,12 @@ describe("Morse Code Translator", () => {
     cy.get("input").type("Hello world my name is chu");
     cy.get("button").click();
     cy.get("#output").should("have.text", ".... . .-.. .-.. --- / .-- --- .-. .-.. -.. / -- -.-- / -. .- -- . / .. ... / -.-. .... ..-")
+  });
+
+  it("Translates English to Morse code and handle punctuation", () => {
+    cy.get("input").type("Hello world, my name is chu!");
+    cy.get("button").click();
+    cy.get("#output").should("have.text", ".... . .-.. .-.. --- / .-- --- .-. .-.. -.. --..-- / -- -.-- / -. .- -- . / .. ... / -.-. .... ..- -.-.--")
   });
 
 });
